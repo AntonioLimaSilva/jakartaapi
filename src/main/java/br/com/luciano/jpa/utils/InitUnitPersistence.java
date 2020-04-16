@@ -12,7 +12,7 @@ public class InitUnitPersistence {
 
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("Ecommerce-PU");
         EntityManager entityManager = factory.createEntityManager();
-        
+
         Product product = entityManager.find(Product.class, 1);
 
         System.out.println("Name: " + product.getName());
