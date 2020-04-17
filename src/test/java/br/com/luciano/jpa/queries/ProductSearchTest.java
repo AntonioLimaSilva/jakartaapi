@@ -5,7 +5,7 @@ import br.com.luciano.jpa.entities.Product;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ProductTest extends EntityManagerTest {
+public class ProductSearchTest extends EntityManagerTest {
 
     @Test
     public void shouldSearchProductById() {
