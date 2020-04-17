@@ -13,7 +13,7 @@ public class EntityManagerTest {
 
     private static EntityManagerFactory factory;
 
-    EntityManager manager;
+    protected EntityManager manager;
 
     @BeforeClass
     public static void setUpBeforeClass() {

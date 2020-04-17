@@ -1,5 +1,6 @@
-package br.com.luciano.jpa;
+package br.com.luciano.jpa.queries;
 
+import br.com.luciano.jpa.EntityManagerTest;
 import br.com.luciano.jpa.entities.Product;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +11,7 @@ public class ProductTest extends EntityManagerTest {
     public void shouldSearchProductById() {
         Product product = manager.find(Product.class, 1);
 
-        Assert.assertNotNull(product);
+        Assert.assertNotNull(product.getId());
     }
 
 }
