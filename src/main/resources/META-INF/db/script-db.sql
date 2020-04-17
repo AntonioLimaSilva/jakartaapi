@@ -1,1 +1,2 @@
-insert into Product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
+insert into product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
+insert into customer (id, name) values (1, 'Casas Bahia');
