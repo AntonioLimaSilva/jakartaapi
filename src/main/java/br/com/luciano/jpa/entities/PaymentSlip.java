@@ -7,17 +7,21 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tbl_category")
+@Table(name = "tbl_payment_slip")
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Category {
+public class PaymentSlip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-    private String name;
-    @Column(name = "root_category_id")
-    private Integer rootCategoryId;
+    @Column(name = "order_id")
+    private Integer orderId;
+    @Column(name = "payment_status")
+    private PaymentStatus status;
+    @Column(name = "bar_code")
+    private String barCode;
+
 }

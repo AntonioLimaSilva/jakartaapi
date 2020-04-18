@@ -1,6 +1,6 @@
 package br.com.luciano.jpa.entities;
 
-public enum Status {
+public enum OrderStatus {
 
     WAITING,
     CANCELED,

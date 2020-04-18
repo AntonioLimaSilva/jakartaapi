@@ -1,2 +1,2 @@
-insert into product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
-insert into customer (id, name) values (1, 'Casas Bahia');
+insert into tbl_product (id, name, price, description) values (1, 'Kindle', 499.0, 'Conheça o novo Kindle, agora com iluminação embutida ajustável, que permite que você leia em ambientes abertos ou fechados, a qualquer hora do dia.');
+insert into tbl_customer (id, name, gender) values (1, 'ELAINE LIMA', 'FEMALE');
