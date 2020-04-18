@@ -17,8 +17,9 @@ public class PaymentSlip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-    @Column(name = "order_id")
-    private Integer orderId;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
     @Column(name = "payment_status")
     private PaymentStatus status;
     @Column(name = "bar_code")

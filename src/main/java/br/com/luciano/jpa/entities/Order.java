@@ -7,6 +7,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_order")
@@ -23,10 +25,16 @@ public class Order {
     private LocalDateTime initialDate;
     @Column(name = "final_date")
     private LocalDateTime finalDate;
-    @Column(name = "invoice_id")
-    private Integer invoiceId;
     private BigDecimal total;
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
-
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "invoice_id")
+    private Invoice invoice;
+    @OneToMany(mappedBy = "order")
+    private List<Item> items;
+    @OneToOne(mappedBy = "order")
+    private PaymentCard paymentCard;
+    @OneToOne(mappedBy = "order")
+    private PaymentSlip paymentSlip;
 }
