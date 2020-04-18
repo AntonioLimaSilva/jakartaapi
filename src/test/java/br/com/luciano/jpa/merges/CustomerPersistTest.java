@@ -27,4 +27,21 @@ public class CustomerPersistTest extends EntityManagerTest {
 
     }
 
+    @Test
+    public void shouldUpdateAndSearchCustomerById() {
+        Customer customer = this.manager.find(Customer.class, 2);
+
+        customer.setName("Maria de Medeiros");
+
+        this.manager.getTransaction().begin();
+        this.manager.merge(customer);
+        this.manager.getTransaction().commit();
+
+        this.manager.clear();
+
+        Customer customerVerify = this.manager.find(Customer.class, 2);
+
+        Assert.assertEquals(customer.getName(), customerVerify.getName());
+    }
+
 }
