@@ -5,7 +5,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
+/**
+ * Auto relacionamento na mesma tabela
+ */
 @Entity
 @Table(name = "tbl_category")
 @Getter
@@ -18,6 +22,9 @@ public class Category {
     @EqualsAndHashCode.Include
     private Integer id;
     private String name;
-    @Column(name = "root_category_id")
-    private Integer rootCategoryId;
+    @ManyToOne //owner da relação
+    @JoinColumn(name = "root_category_id")
+    private Category rootCategory;
+    @OneToMany(mappedBy = "rootCategory") // not owner da relacao
+    private List<Category> categories;
 }
